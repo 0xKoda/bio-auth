@@ -1,24 +1,22 @@
-pragma solidity ^0.8.13;
-import "BehaviouralBiometricAuth.sol";
+pragma solidity ^0.8.0;
+import "../src/BehaviouralBiometricAuth.sol";
 
 contract TestBehaviouralBiometricAuth {
     BehaviouralBiometricAuth auth;
 
-    constructor() public {
+bytes32[]  data = [    bytes32(0x0123456789012345678901234567890123456789012345678901234567890123),    bytes32(0x0123456789012345678901234567890123456789012345678901234567890124),    bytes32(0x0123456789012345678901234567890123456789012345678901234567890125)];
+
+    constructor() {
         auth = new BehaviouralBiometricAuth(
             msg.sender,
-            [
-                0x0123456789012345678901234567890123456789012345678901234567890123,
-                0x0123456789012345678901234567890123456789012345678901234567890124,
-                0x0123456789012345678901234567890123456789012345678901234567890125
-            ],
+            data,
+
             2
         );
     }
 
     function testAuthenticate() public {
         // Test successful authentication
-        bytes32[] memory data = [            0x0123456789012345678901234567890123456789012345678901234567890123,            0x0123456789012345678901234567890123456789012345678901234567890124,            0x0123456789012345678901234567890123456789012345678901234567890125        ];
         assert(auth.authenticate(data));
 
         // Test unsuccessful authentication

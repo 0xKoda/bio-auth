@@ -1,9 +1,11 @@
-pragma solidity ^0.6.0;
+pragma solidity ^0.8.0;
 
-import "https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "openz/utils/math/SafeMath.sol";
+
 
 contract BehaviouralBiometricAuth {
     using SafeMath for uint256;
+    using SafeMath for bytes32;
 
     // Address of the user to be authenticated
     address public user;
@@ -12,7 +14,7 @@ contract BehaviouralBiometricAuth {
     // Threshold for determining whether the user's biometric data matches the stored data
     uint256 public threshold;
 
-    constructor(address _user, bytes32[] memory _biometricData, uint256 _threshold) public {
+    constructor(address _user, bytes32[] memory _biometricData, uint256 _threshold) {
         user = _user;
         biometricData = _biometricData;
         threshold = _threshold;
