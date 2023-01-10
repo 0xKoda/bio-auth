@@ -42,4 +42,4 @@ forge test
 
 ## License
 
-[AGPL-3.0-only](https://github.com/0xKoda/bio-auth/blob/master/LICENSE)
+[AGPL-3.0-only](https://github.com/0xKoda/bio-auth/blob/main/LICENSE)
