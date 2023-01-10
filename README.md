@@ -14,7 +14,7 @@ A recent effort for improving Ethereum account security is the adoption of [Acco
 
 # Use
 
-This is a POC illustrating the potential use of behavioral biometric authentication to secure abstracted Ethereum accounts in continuous form.
+This is a POC illustrating the potential use of behavioral biometric authentication to secure abstracted Ethereum accounts in continuous form. This is not fit for production use, but demonstrates how a model could work in future.
 
 For now, accounts are initiated using an array of bytes32 signatures. These signatures are to be produced off chain, but for the purposes of this POC they remain generic. Storage of the signatures are currently in a mapping, but would be best suited leveraging a privacy model like a Merle tree.
 
