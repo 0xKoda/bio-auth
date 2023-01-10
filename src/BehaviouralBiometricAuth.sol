@@ -2,7 +2,9 @@ pragma solidity ^0.8.0;
 
 import "openz/utils/math/SafeMath.sol";
 
-
+/*
+A Behavioural Biometric Authenticator POC for BBA account security of ethereum accounts.
+Authentication sig to be calculated offchain and submitted with transactions to abstracted account.*/
 contract BehaviouralBiometricAuth {
     using SafeMath for uint256;
     using SafeMath for bytes32;
@@ -20,7 +22,7 @@ contract BehaviouralBiometricAuth {
         threshold = _threshold;
     }
 
-    // Authenticates the user based on their behavioural biometric data
+    // Authenticates the user based on their behavioural biometric data produced offchain
     function authenticate(bytes32[] memory data) public view returns (bool) {
         // Calculate the similarity between the user's biometric data and the stored data
         uint256 similarity = 0;
