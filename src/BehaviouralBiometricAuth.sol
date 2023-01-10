@@ -1,3 +1,4 @@
+//SPDX-License-Identifier: AGPL-3.0-only;
 pragma solidity ^0.8.0;
 
 import "openz/utils/math/SafeMath.sol";
@@ -12,6 +13,8 @@ contract BehaviouralBiometricAuth {
     // Address of the user to be authenticated
     address public user;
     // Behavioural biometric data of the user
+    // NOTE: WHile we use a plain mapping here, a production ready module may wish to
+    // leverage the benefits and privacy of a merkle tree.
     bytes32[] public biometricData;
     // Threshold for determining whether the user's biometric data matches the stored data
     uint256 public threshold;
