@@ -5,15 +5,14 @@ import "openz/utils/math/SafeMath.sol";
 
 /*
 A Behavioural Biometric Authenticator POC for BBA account security of ethereum accounts.
-Authentication sig to be calculated offchain and submitted with transactions to abstracted account.*/
+Authentication sig to be calculated offchain and submitted with transactions from abstracted accounts.*/
 contract BehaviouralBiometricAuth {
     using SafeMath for uint256;
-    using SafeMath for bytes32;
 
     // Address of the user to be authenticated
     address public user;
     // Behavioural biometric data of the user
-    // NOTE: WHile we use a plain mapping here, a production ready module may wish to
+    // NOTE: Using a mapping here, but a production ready module may wish to
     // leverage the benefits and privacy of a merkle tree.
     bytes32[] public biometricData;
     // Threshold for determining whether the user's biometric data matches the stored data
